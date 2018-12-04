@@ -359,7 +359,6 @@
         </div>
       </div>
       <div class="time-limit-shop">
-        
       </div>
     </div>
   </div>
