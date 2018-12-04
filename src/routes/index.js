@@ -6,19 +6,31 @@ import Profile from '../pages/Profile/Profile'
 export default [
   {
     path:'/home',
-    component:Home
+    component:Home,
+    meta: {
+      isShow:true
+    }
   },
   {
     path:'/sort',
-    component:Sort
+    component:Sort,
+    meta: {
+      isShow:true
+    }
   },
   {
     path:'/find',
-    component:Find
+    component:Find,
+    meta: {
+      isShow:true
+    }
   },
   {
     path:'/shopcart',
-    component:ShopCart
+    component:ShopCart,
+    meta: {
+      isShow:true
+    }
   },
   {
     path:'/profile',
@@ -26,6 +38,9 @@ export default [
   },
   {
     path:'/',
-    redirect:'/home'
+    redirect:'/home',
+    meta: {
+      isShow:true
+    }
   },
 ]

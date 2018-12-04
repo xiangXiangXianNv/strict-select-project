@@ -1,15 +1,13 @@
 <template>
-    <div>
-      ShopCart
-    </div>
+   <div>
+     ShopCart
+   </div>
 </template>
-
 <script>
     export default {
         name: "shop-cart"
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
 </style>
