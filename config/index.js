@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      //因为并不是所有的请求都需要代理,在进行请求mock数据的时候不需要代理(在前台请求),所以加个限制
+      '/api': { // 匹配所有以 '/api'开头的请求路径
+        target: 'http://localhost:5000', // 代理目标的基础路径
+        changeOrigin: true, // 支持跨域
+        pathRewrite: {// 重写路径: 去掉路径中开头的'/api'
+          '^/api': ''   //真正请求的时候将以/api的字符串替换为空
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
