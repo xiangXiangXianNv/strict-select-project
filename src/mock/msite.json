@@ -11060,173 +11060,172 @@
   ],
   "categoryHotSellModule": {
     "titleTargetUrl": "",
-    "categoryList": [
-      {
-        "picUrl": "http://yanxuan.nosdn.127.net/e7b3e95a03560f65fee9da6f8dd8ebde.png",
-        "extra": {
-          "operationResource": {
-            "itemIdList": [
-              "1550014",
-              "1566003",
-              "1165015",
-              "1563002",
-              "1624010",
-              "1566001",
-              "1252048",
-              "1634003",
-              "1623012",
-              "1551018",
-              "1556005",
-              "1566002",
-              "1245014",
-              "1164006",
-              "1672005",
-              "1277002",
-              "1586017",
-              "1556015",
-              "1561007",
-              "1563003",
-              "1550015",
-              "1668003",
-              "1647023",
-              "1551023",
-              "1593000",
-              "1561008",
-              "1551024",
-              "1673003",
-              "1021020",
-              "3444014"
-            ],
-            "categoryName": "服装",
-            "categoryId": "1010000"
-          },
-          "modelType": 5
+    "categoryList1":[ {
+      "picUrl": "http://yanxuan.nosdn.127.net/e7b3e95a03560f65fee9da6f8dd8ebde.png",
+      "extra": {
+        "operationResource": {
+          "itemIdList": [
+            "1550014",
+            "1566003",
+            "1165015",
+            "1563002",
+            "1624010",
+            "1566001",
+            "1252048",
+            "1634003",
+            "1623012",
+            "1551018",
+            "1556005",
+            "1566002",
+            "1245014",
+            "1164006",
+            "1672005",
+            "1277002",
+            "1586017",
+            "1556015",
+            "1561007",
+            "1563003",
+            "1550015",
+            "1668003",
+            "1647023",
+            "1551023",
+            "1593000",
+            "1561008",
+            "1551024",
+            "1673003",
+            "1021020",
+            "3444014"
+          ],
+          "categoryName": "服装",
+          "categoryId": "1010000"
         },
-        "itemPicBeanList": [
-          {
-            "itemId": 1550014,
-            "picUrl": "http://yanxuan.nosdn.127.net/77b7e8586397dc27613e6c5c6da7a85a.png"
-          },
-          {
-            "itemId": 1566003,
-            "picUrl": "http://yanxuan.nosdn.127.net/e7b3e95a03560f65fee9da6f8dd8ebde.png"
-          },
-          {
-            "itemId": 1165015,
-            "picUrl": "http://yanxuan.nosdn.127.net/f319c6837f5d266082da494045ffecac.png"
-          },
-          {
-            "itemId": 1563002,
-            "picUrl": "http://yanxuan.nosdn.127.net/033b4d29df031af03772f539e515cf7f.png"
-          },
-          {
-            "itemId": 1624010,
-            "picUrl": "http://yanxuan.nosdn.127.net/4bd683266bdb366de0e28128ea6690bc.png"
-          },
-          {
-            "itemId": 1566001,
-            "picUrl": "http://yanxuan.nosdn.127.net/6c4e7cd4e462f4de55bb050f612f8c4a.png"
-          },
-          {
-            "itemId": 1252048,
-            "picUrl": "http://yanxuan.nosdn.127.net/7562a7cbfc293477544dbafd6b3caabe.png"
-          },
-          {
-            "itemId": 1634003,
-            "picUrl": "http://yanxuan.nosdn.127.net/e1f6e3d6a799018cc430fb3c90f1c57a.png"
-          },
-          {
-            "itemId": 1623012,
-            "picUrl": "http://yanxuan.nosdn.127.net/60a27485a068170e3eb7d39cc8fae407.png"
-          },
-          {
-            "itemId": 1551018,
-            "picUrl": "http://yanxuan.nosdn.127.net/ee699dd4ff2c36927d994ee29f9337f0.png"
-          },
-          {
-            "itemId": 1556005,
-            "picUrl": "http://yanxuan.nosdn.127.net/de34d4d8407709f2edd88597d66fcfcb.png"
-          },
-          {
-            "itemId": 1566002,
-            "picUrl": "http://yanxuan.nosdn.127.net/98c0badf8731a87aa9ca765b2f8c33c8.png"
-          },
-          {
-            "itemId": 1245014,
-            "picUrl": "http://yanxuan.nosdn.127.net/0f69403e85a27a34d4df162391d13e31.png"
-          },
-          {
-            "itemId": 1164006,
-            "picUrl": "http://yanxuan.nosdn.127.net/71756214229fd21f2807c7aca4f6799b.png"
-          },
-          {
-            "itemId": 1672005,
-            "picUrl": "http://yanxuan.nosdn.127.net/3942af358f8d2664df11edb3e20bb2ec.png"
-          },
-          {
-            "itemId": 1277002,
-            "picUrl": "http://yanxuan.nosdn.127.net/28e64b26ec5462a4ba3fc6fe0c8214d3.png"
-          },
-          {
-            "itemId": 1586017,
-            "picUrl": "http://yanxuan.nosdn.127.net/89c29622bbd4225fb2afb6aed48d7cd6.png"
-          },
-          {
-            "itemId": 1556015,
-            "picUrl": "http://yanxuan.nosdn.127.net/2a06950f406ba88cce3701f2848cc5ff.png"
-          },
-          {
-            "itemId": 1561007,
-            "picUrl": "http://yanxuan.nosdn.127.net/6f0e1e8bd1513eb0e46e8bb3ec71902a.png"
-          },
-          {
-            "itemId": 1563003,
-            "picUrl": "http://yanxuan.nosdn.127.net/92d01f0a28e326af17b12886eb85194e.png"
-          },
-          {
-            "itemId": 1550015,
-            "picUrl": "http://yanxuan.nosdn.127.net/cb2d6614c4a5044211fc242b6a66af41.png"
-          },
-          {
-            "itemId": 1668003,
-            "picUrl": "http://yanxuan.nosdn.127.net/04d430ff13b7e54dba8801aa1d878c2b.png"
-          },
-          {
-            "itemId": 1647023,
-            "picUrl": "http://yanxuan.nosdn.127.net/3d3181ba7d6f67324bbdfc1465487c91.png"
-          },
-          {
-            "itemId": 1551023,
-            "picUrl": "http://yanxuan.nosdn.127.net/0199327973d85605f806690317a7eac5.png"
-          },
-          {
-            "itemId": 1593000,
-            "picUrl": "http://yanxuan.nosdn.127.net/81dee42a1a1b768377defa6ccd8fb934.png"
-          },
-          {
-            "itemId": 1561008,
-            "picUrl": "http://yanxuan.nosdn.127.net/c6e534df42fb057bfbdaf6ae2b7ef0d6.png"
-          },
-          {
-            "itemId": 1551024,
-            "picUrl": "http://yanxuan.nosdn.127.net/f4bb85a7975f10d2809693e13cd6b091.png"
-          },
-          {
-            "itemId": 1673003,
-            "picUrl": "http://yanxuan.nosdn.127.net/78ea7ea8e35ef016a9000c8c6c12ad92.png"
-          },
-          {
-            "itemId": 1021020,
-            "picUrl": "http://yanxuan.nosdn.127.net/1d116324d7d0e90f8cb221ae7a453afb.png"
-          },
-          {
-            "itemId": 3444014,
-            "picUrl": "http://yanxuan.nosdn.127.net/424c2f57c40284edfeaa991e0e2e23de.png"
-          }
-        ],
-        "categoryName": "服装榜",
-        "targetUrl": "https://m.you.163.com/item/saleRank?categoryId=1010000"
+        "modelType": 5
       },
+      "itemPicBeanList": [
+        {
+          "itemId": 1550014,
+          "picUrl": "http://yanxuan.nosdn.127.net/77b7e8586397dc27613e6c5c6da7a85a.png"
+        },
+        {
+          "itemId": 1566003,
+          "picUrl": "http://yanxuan.nosdn.127.net/e7b3e95a03560f65fee9da6f8dd8ebde.png"
+        },
+        {
+          "itemId": 1165015,
+          "picUrl": "http://yanxuan.nosdn.127.net/f319c6837f5d266082da494045ffecac.png"
+        },
+        {
+          "itemId": 1563002,
+          "picUrl": "http://yanxuan.nosdn.127.net/033b4d29df031af03772f539e515cf7f.png"
+        },
+        {
+          "itemId": 1624010,
+          "picUrl": "http://yanxuan.nosdn.127.net/4bd683266bdb366de0e28128ea6690bc.png"
+        },
+        {
+          "itemId": 1566001,
+          "picUrl": "http://yanxuan.nosdn.127.net/6c4e7cd4e462f4de55bb050f612f8c4a.png"
+        },
+        {
+          "itemId": 1252048,
+          "picUrl": "http://yanxuan.nosdn.127.net/7562a7cbfc293477544dbafd6b3caabe.png"
+        },
+        {
+          "itemId": 1634003,
+          "picUrl": "http://yanxuan.nosdn.127.net/e1f6e3d6a799018cc430fb3c90f1c57a.png"
+        },
+        {
+          "itemId": 1623012,
+          "picUrl": "http://yanxuan.nosdn.127.net/60a27485a068170e3eb7d39cc8fae407.png"
+        },
+        {
+          "itemId": 1551018,
+          "picUrl": "http://yanxuan.nosdn.127.net/ee699dd4ff2c36927d994ee29f9337f0.png"
+        },
+        {
+          "itemId": 1556005,
+          "picUrl": "http://yanxuan.nosdn.127.net/de34d4d8407709f2edd88597d66fcfcb.png"
+        },
+        {
+          "itemId": 1566002,
+          "picUrl": "http://yanxuan.nosdn.127.net/98c0badf8731a87aa9ca765b2f8c33c8.png"
+        },
+        {
+          "itemId": 1245014,
+          "picUrl": "http://yanxuan.nosdn.127.net/0f69403e85a27a34d4df162391d13e31.png"
+        },
+        {
+          "itemId": 1164006,
+          "picUrl": "http://yanxuan.nosdn.127.net/71756214229fd21f2807c7aca4f6799b.png"
+        },
+        {
+          "itemId": 1672005,
+          "picUrl": "http://yanxuan.nosdn.127.net/3942af358f8d2664df11edb3e20bb2ec.png"
+        },
+        {
+          "itemId": 1277002,
+          "picUrl": "http://yanxuan.nosdn.127.net/28e64b26ec5462a4ba3fc6fe0c8214d3.png"
+        },
+        {
+          "itemId": 1586017,
+          "picUrl": "http://yanxuan.nosdn.127.net/89c29622bbd4225fb2afb6aed48d7cd6.png"
+        },
+        {
+          "itemId": 1556015,
+          "picUrl": "http://yanxuan.nosdn.127.net/2a06950f406ba88cce3701f2848cc5ff.png"
+        },
+        {
+          "itemId": 1561007,
+          "picUrl": "http://yanxuan.nosdn.127.net/6f0e1e8bd1513eb0e46e8bb3ec71902a.png"
+        },
+        {
+          "itemId": 1563003,
+          "picUrl": "http://yanxuan.nosdn.127.net/92d01f0a28e326af17b12886eb85194e.png"
+        },
+        {
+          "itemId": 1550015,
+          "picUrl": "http://yanxuan.nosdn.127.net/cb2d6614c4a5044211fc242b6a66af41.png"
+        },
+        {
+          "itemId": 1668003,
+          "picUrl": "http://yanxuan.nosdn.127.net/04d430ff13b7e54dba8801aa1d878c2b.png"
+        },
+        {
+          "itemId": 1647023,
+          "picUrl": "http://yanxuan.nosdn.127.net/3d3181ba7d6f67324bbdfc1465487c91.png"
+        },
+        {
+          "itemId": 1551023,
+          "picUrl": "http://yanxuan.nosdn.127.net/0199327973d85605f806690317a7eac5.png"
+        },
+        {
+          "itemId": 1593000,
+          "picUrl": "http://yanxuan.nosdn.127.net/81dee42a1a1b768377defa6ccd8fb934.png"
+        },
+        {
+          "itemId": 1561008,
+          "picUrl": "http://yanxuan.nosdn.127.net/c6e534df42fb057bfbdaf6ae2b7ef0d6.png"
+        },
+        {
+          "itemId": 1551024,
+          "picUrl": "http://yanxuan.nosdn.127.net/f4bb85a7975f10d2809693e13cd6b091.png"
+        },
+        {
+          "itemId": 1673003,
+          "picUrl": "http://yanxuan.nosdn.127.net/78ea7ea8e35ef016a9000c8c6c12ad92.png"
+        },
+        {
+          "itemId": 1021020,
+          "picUrl": "http://yanxuan.nosdn.127.net/1d116324d7d0e90f8cb221ae7a453afb.png"
+        },
+        {
+          "itemId": 3444014,
+          "picUrl": "http://yanxuan.nosdn.127.net/424c2f57c40284edfeaa991e0e2e23de.png"
+        }
+      ],
+      "categoryName": "服装榜",
+      "targetUrl": "https://m.you.163.com/item/saleRank?categoryId=1010000"
+    },
       {
         "picUrl": "http://yanxuan.nosdn.127.net/97719f5e6bbca639cdab6b50591c0689.png",
         "extra": {
@@ -11387,7 +11386,8 @@
         ],
         "categoryName": "饮食榜",
         "targetUrl": "https://m.you.163.com/item/saleRank?categoryId=1005002"
-      },
+      }],
+    "categoryList2": [
       {
         "picUrl": "http://yanxuan.nosdn.127.net/73a065d6fc8c32197b54421808c54788.png",
         "extra": {

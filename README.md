@@ -7,4 +7,3 @@
 ### day02
  1. 没有设置meta标签中的user-scalable=no属性,导致双击放大后出现布局有点乱.
  2. 中间有元素出现了margin-right的溢出,然后导致整个页面出现了水平滚动条.解决 : 去除最右侧的margin-right
- 3. cateList是第二块 

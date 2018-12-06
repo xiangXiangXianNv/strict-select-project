@@ -22,6 +22,6 @@ Mock.mock('/activityModule',{
 });
 Mock.mock('/categoryHotSell',{
   code:0,
-  data:msite.categoryHotSellModule
+  data:msite.categoryHotSellModule.categoryList2
 });
 

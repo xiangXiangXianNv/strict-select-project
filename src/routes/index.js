@@ -38,7 +38,7 @@ export default [
   },
   {
     path:'/',
-    redirect:'/home',
+    redirect:'/sort',
     meta: {
       isShow:true
     }

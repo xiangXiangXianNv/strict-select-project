@@ -1,7 +1,7 @@
 <template>
   <div class="hot-sell">
     <div class="hot-header">
-      <span class="title">{{categoryHotSell.title}}</span>
+      <span class="title">类目热销榜</span>
     </div>
     <div class="hot-content">
       <div class="content-top">
@@ -11,7 +11,7 @@
             <span class="line"></span>
           </div>
           <div class="right">
-            <img src="https://yanxuan.nosdn.127.net/6a690105c3f3dd2806264f3cc4aee54c.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <img src="http://yanxuan.nosdn.127.net/e7b3e95a03560f65fee9da6f8dd8ebde.png?imageView&quality=65&thumbnail=200x200" alt="">
           </div>
         </div>
         <div class="top-right">
@@ -20,42 +20,14 @@
             <span class="line"></span>
           </div>
           <div class="right">
-            <img src="https://yanxuan.nosdn.127.net/dc3ea0bf6df2e75dd9ec7fa8987be25a.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <img src="http://yanxuan.nosdn.127.net/97719f5e6bbca639cdab6b50591c0689.png?imageView&quality=65&thumbnail=200x200" alt="">
           </div>
         </div>
       </div>
       <div class="content-down">
-        <div class="down-item">
-          <span class="item-text">电器榜</span>
-          <img src="https://yanxuan.nosdn.127.net/362a8249b48d91d99604680b5471b507.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">居家榜</span>
-          <img src="https://yanxuan.nosdn.127.net/2eb0624b89d2cce1a5fb13187a0c10d8.jpg?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">鞋包配饰榜</span>
-          <img src="https://yanxuan.nosdn.127.net/cbbdd7c5622a0eaab31e42247909c959.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">洗护榜</span>
-          <img src="https://yanxuan.nosdn.127.net/a07c82f8b26a4ed42b1d697eb9ea418f.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">餐厨榜</span>
-          <img src="https://yanxuan.nosdn.127.net/02da8bce2fa3a182d398f6a09e8ac2f5.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">文体榜</span>
-          <img src="https://yanxuan.nosdn.127.net/4b72ba8cdcf9eccd3ed1e6be35b09ab8.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">婴宣榜</span>
-          <img src="https://yanxuan.nosdn.127.net/ec64907077ca056b393d208792d4e4bb.png?imageView&quality=65&thumbnail=200x200" alt="">
-        </div>
-        <div class="down-item">
-          <span class="item-text">特色榜</span>
-          <img src="https://yanxuan.nosdn.127.net/249ed54cd248f3e2f6950921e20d41ea.png?imageView&quality=65&thumbnail=200x200" alt="">
+        <div class="down-item" v-for="(category,index) in categoryHotSell" :key="index">
+          <span class="item-text">{{category.categoryName}}</span>
+          <img :src="category.picUrl" alt="">
         </div>
       </div>
     </div>
