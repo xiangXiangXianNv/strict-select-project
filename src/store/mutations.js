@@ -11,7 +11,8 @@ import {
   RESET_USER,
   RECEIVE_NAVLIST,
   RECEIVE_RECOMMEND,
-  RECEIVE_DAREN
+  RECEIVE_DAREN,
+  RECEIVE_SEARCHLIST
 } from "./mutation-types"
 export default {
   [RECEIVE_HEADERLIST](state,{cateList}){
@@ -52,5 +53,8 @@ export default {
   },
   [RECEIVE_DAREN](state,{daren}){
     state.daren = daren;
+  },
+  [RECEIVE_SEARCHLIST](state,{searchList}){
+    state.searchList = searchList;
   },
 }

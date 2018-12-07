@@ -10,7 +10,7 @@
   export default {
     name: 'App',
     mounted(){
-      this.$store.dispatch("getUser");
+      //this.$store.dispatch("getUser");
     },
     components:{
       FoodGuide

@@ -13,5 +13,11 @@
  2. commit的时候一定要注意 mutation-type一定不要写错了!!!!
 ## day04
  1. 判断返回数据的时候使用了typeof去判断一个对象和数组是否是object是非常严重的错误!!!!!因为数组的类型也是一个对象 
+
  2. v-for的优先级比v-if的优先级高
-。
+
+ 3. axios发送post请求,如果是form-data数据的话,必须使用一个包将其转换成form-data数据
+
+  - ```
+    axios.post(url,qs .stringify({jobNumber: '430525', password: '123'}), {headers: {'Content-Type':'application/x-www-form-urlencoded'}});
+    ```

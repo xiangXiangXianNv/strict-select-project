@@ -11,4 +11,5 @@ export default {
   navList:[],  //保存识物导航信息
   recommend:[], //推荐数据
   daren:{}, //达人数据
+  searchList:[]
 }

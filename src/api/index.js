@@ -76,6 +76,9 @@ export const reqDaRen = ({index,url,page})=>{
   }
   return ajax(BASE2+url+path);
 };
-
+//请求识物组件中的内容推荐列表数据
+export const reqSearchList = ({keywordPrefix,url})=>{
+  return ajax(BASE2+url,{keywordPrefix:keywordPrefix},"POST");
+};
 
 

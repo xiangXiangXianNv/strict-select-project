@@ -6,6 +6,7 @@ import Profile from '../pages/Profile/Profile'
 import Tab from '../pages/Find/Tab/Tab'
 import NotFound from '../components/NotFound/NotFound'
 import User from '../pages/User/User'
+import Search from '../pages/Search/Search'
 export default [
   {
     path:'/home',
@@ -58,6 +59,10 @@ export default [
   {
     path:'/user',
     component:User
+  },
+  {
+    path:'/search',
+    component:Search
   },
   {
     path:'/',

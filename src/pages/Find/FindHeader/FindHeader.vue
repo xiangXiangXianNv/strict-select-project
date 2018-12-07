@@ -12,7 +12,7 @@
           </div>
         </slot>
         <div class="header-right">
-          <i class="iconfont icon-sousuo1"></i>
+          <i class="iconfont icon-sousuo1" @click="$router.replace('/search')"></i>
           <i class="iconfont icon-gouwuche1"></i>
         </div>
       </div>

@@ -11,7 +11,8 @@ import {
   RESET_USER,
   RECEIVE_NAVLIST,
   RECEIVE_RECOMMEND,
-  RECEIVE_DAREN
+  RECEIVE_DAREN,
+  RECEIVE_SEARCHLIST
 } from "./mutation-types"
 import {
   reqHeaderList,
@@ -26,7 +27,8 @@ import {
   resetUser,
   reqNavList,
   reqRecommend,
-  reqDaRen
+  reqDaRen,
+  reqSearchList
 } from "../api"
 export default {
   async getCateList({commit},fn){
@@ -132,6 +134,13 @@ export default {
     if(result.code==='200'){
       const daren = result.data;
       commit(RECEIVE_DAREN,{daren})
+    }
+  },
+  async getSearchList({commit},{url,keywordPrefix}){
+    const result = await reqSearchList({url,keywordPrefix});
+    const searchList = result.data;
+    if(result.code==='200'){
+      commit(RECEIVE_SEARCHLIST,{searchList});
     }
   },
 }
