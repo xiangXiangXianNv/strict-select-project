@@ -1,4 +1,4 @@
-### day01
+﻿### day01
  1. rem适配
  2. swiper没有引入样式导致轮播错误
  3. 设置背景图片时必须把background-size写在background后面,因为background是一个简写形式,会把background-size覆盖
@@ -14,3 +14,4 @@
 ## day04
  1. 判断返回数据的时候使用了typeof去判断一个对象和数组是否是object是非常严重的错误!!!!!因为数组的类型也是一个对象 
  2. v-for的优先级比v-if的优先级高
+。
