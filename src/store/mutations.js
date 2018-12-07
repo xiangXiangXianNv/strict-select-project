@@ -7,7 +7,11 @@ import {
   RECEIVE_CATEGORYHOTSELL,
   RECEIVE_CATEGORYLIST,
   RECEIVE_FIndRecommend,
-  RECEIVE_USER
+  RECEIVE_USER,
+  RESET_USER,
+  RECEIVE_NAVLIST,
+  RECEIVE_RECOMMEND,
+  RECEIVE_DAREN
 } from "./mutation-types"
 export default {
   [RECEIVE_HEADERLIST](state,{cateList}){
@@ -35,6 +39,18 @@ export default {
     state.findRecommend = findRecommend;
   },
   [RECEIVE_USER](state,{user}){
-    state.findRecommend = user;
+    state.user = user;
+  },
+  [RESET_USER](state){
+    state.user = {};
+  },
+  [RECEIVE_NAVLIST](state,{navList}){
+    state.navList = navList;
+  },
+  [RECEIVE_RECOMMEND](state,{recommend}){
+    state.recommend = recommend;
+  },
+  [RECEIVE_DAREN](state,{daren}){
+    state.daren = daren;
   },
 }

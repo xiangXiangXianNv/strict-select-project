@@ -3,12 +3,9 @@ import Sort from '../pages/Sort/Sort'
 import Find from '../pages/Find/Find'
 import ShopCart from '../pages/ShopCart/ShopCart'
 import Profile from '../pages/Profile/Profile'
-import Recommend from '../pages/Find/Recommend/Recommend'
-import Expert from '../pages/Find/Expert/Expert'
-import TopNew from '../pages/Find/TopNew/TopNew'
-import ShowList from '../pages/Find/ShowList/ShowList'
-import FindHome from '../pages/Find/FindHome/FindHome'
+import Tab from '../pages/Find/Tab/Tab'
 import NotFound from '../components/NotFound/NotFound'
+import User from '../pages/User/User'
 export default [
   {
     path:'/home',
@@ -32,43 +29,15 @@ export default [
     },
     children:[
       {
-        path:'recommend',
-        component:Recommend,
-        meta: {
-          isShow:true
-        },
-      },
-      {
-        path:'expert',
-        component:Expert,
-        meta: {
-          isShow:true
-        },
-      },
-      {
-        path:'showlist',
-        component:ShowList,
-        meta: {
-          isShow:true
-        },
-      },
-      {
-        path:'topnew',
-        component:TopNew,
-        meta: {
-          isShow:true
-        },
-      },
-      {
-        path:'find-home',
-        component:FindHome,
+        path:'tab/:index',
+        component:Tab,
         meta: {
           isShow:true
         },
       },
       {
         path:'/find',
-        redirect:'/find/recommend',
+        redirect:'/find/tab/0',
         meta: {
           isShow:true
         },
@@ -85,6 +54,10 @@ export default [
   {
     path:'/profile',
     component:Profile
+  },
+  {
+    path:'/user',
+    component:User
   },
   {
     path:'/',

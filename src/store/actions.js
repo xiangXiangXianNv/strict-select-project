@@ -7,7 +7,11 @@ import {
   RECEIVE_CATEGORYHOTSELL,
   RECEIVE_CATEGORYLIST,
   RECEIVE_FIndRecommend,
-  RECEIVE_USER
+  RECEIVE_USER,
+  RESET_USER,
+  RECEIVE_NAVLIST,
+  RECEIVE_RECOMMEND,
+  RECEIVE_DAREN
 } from "./mutation-types"
 import {
   reqHeaderList,
@@ -17,7 +21,12 @@ import {
   reqActivityModule,
   reqCategoryHotSell,
   reqCategoryList,
-  reqFindRecommend
+  reqFindRecommend,
+  getUser,
+  resetUser,
+  reqNavList,
+  reqRecommend,
+  reqDaRen
 } from "../api"
 export default {
   async getCateList({commit},fn){
@@ -84,7 +93,45 @@ export default {
       typeof fn ==='function' && fn();
     }
   },
+  //保存用户
   saveUser({commit},user){
     commit(RECEIVE_USER,{user})
+  },
+  //自动登录
+  async getUser({commit}){
+    const result  = await getUser();
+    const user = result.data;
+    if(result.code===0) {
+      commit(RECEIVE_USER, {user});
+    }
+  },
+  //用户登出
+  async logout({commit}){
+    const result = await resetUser();
+    if(result.code===0){
+      commit(RESET_USER)
+    }
+  },
+  //请求导航列表
+  async getNavList({commit}){
+    const result = await reqNavList();
+    const navList = result.data;
+    if(result.code==="200"){
+      commit(RECEIVE_NAVLIST,{navList});
+    }
+  },
+  async getRecommend({commit},{index,url}){
+    const result = await reqRecommend({index,url});
+    if(result.code==='200'){
+      const recommend = result.data;
+      commit(RECEIVE_RECOMMEND,{recommend})
+    }
+  },
+  async getDaRen({commit},{index,url,page}){
+    const result = await reqDaRen({index,url,page});
+    if(result.code==='200'){
+      const daren = result.data;
+      commit(RECEIVE_DAREN,{daren})
+    }
   },
 }

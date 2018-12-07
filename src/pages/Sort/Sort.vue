@@ -18,36 +18,12 @@
         </li>
       </ul>
     </div>
-    <div class="sort-right" v-if="categoryList.length>0&&categoryList[currentIndex].type===1">
-      <div class="top-img" :style="{backgroundImage:`url('${categoryList[currentIndex].wapBannerUrl } ')`}">
-      </div>
-      <div class="sort-list">
-        <ul class="list">
-          <li class="list-item"
-                v-for="subcate in categoryList[currentIndex].subCateList">
-            <div class="img-wrap">
-              <img :src="subcate.wapBannerUrl">
-            </div>
-            <div class="name">{{subcate.name}}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="sort-right-2" v-if="categoryList.length>0&&categoryList[currentIndex].type===0">
-      <div class="top-img" :style="{backgroundImage:`url(' ${categoryList[currentIndex].wapBannerUrl } ')`}">
-      </div>
-      <div class="sort-list" v-for="(subcate,index) in categoryList[currentIndex].subCateList" :key="index">
-        <div class="name1">{{subcate.name}}</div>
-        <ul class="list">
-          <li class="list-item" v-for="(cate,index) in subcate.categoryList" :key="index">
-            <div class="img-wrap">
-              <img :src="cate.wapBannerUrl">
-            </div>
-            <div class="name">{{cate.name}}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Item01 :currentIndex="currentIndex" :categoryList="categoryList"
+            v-if="categoryList.length>0&&categoryList[currentIndex].type===1"
+    ></Item01>
+    <Item02 :currentIndex="currentIndex" :categoryList="categoryList"
+            v-if="categoryList.length>0&&categoryList[currentIndex].type===0"
+    ></Item02>
   </div>
 
 </template>
@@ -55,6 +31,8 @@
 <script>
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
+  import Item01 from './SortItem/Item01'
+  import Item02 from './SortItem/Item02'
   export default {
     name: "sort",
     mounted(){
@@ -79,6 +57,10 @@
       handleCurrentIndex(index){
         this.currentIndex=index
       }
+    },
+    components:{
+      Item01,
+      Item02
     }
   }
 </script>
@@ -150,75 +132,4 @@
                 bottom 0
                 width .06rem
                 background-color #ab2b2b
-
-    .sort-right
-      width 5.28rem
-      margin-left: 1.62rem;
-      margin-top 0.88rem
-      padding: .3rem .3rem .21rem .3rem
-      .top-img
-         background url(https://yanxuan.nosdn.127.net/52855d9a0c1f738f26ac125913af0012.jpg?imageView&thumbnail=0x196&quality=75)
-         background-size 100% 100%
-         width 5.28rem
-         height 1.92rem
-         margin-bottom 0.32rem
-      .sort-list
-         .list
-             clearFix()
-            .list-item
-                text-align center
-                width 1.44rem
-                float left
-                margin-right .34rem
-                &:nth-child(3n)
-                  margin-right 0
-                .img-wrap
-                   width 100%
-                   height 1.44rem
-                   img
-                      width 100%
-                      height 100%
-                .name
-                  width 100%
-                  height 0.72rem
-                  font-size 0.27rem
-    .sort-right-2
-      width 5.28rem
-      margin-left 1.62rem
-      margin-top 0.88rem
-      padding .3rem .3rem .21rem .3rem
-      .top-img
-        background url(https://yanxuan.nosdn.127.net/52855d9a0c1f738f26ac125913af0012.jpg?imageView&thumbnail=0x196&quality=75)
-        background-size 100% 100%
-        width 5.28rem
-        height 1.92rem
-        margin-bottom 0.32rem
-      .sort-list
-        .name1
-          white-space nowrap
-          padding-bottom .10667rem
-          margin-bottom .32rem
-          text-align left
-          font-size .27rem
-          font-weight 700
-          border-bottom 1px solid #d9d9d9
-        .list
-          clearFix()
-        .list-item
-          text-align center
-          width 1.44rem
-          float left
-          margin-right .34rem
-          &:nth-child(3n)
-            margin-right 0
-          .img-wrap
-            width 100%
-            height 1.44rem
-            img
-              width 100%
-              height 100%
-          .name
-            width 100%
-            height 0.72rem
-            font-size 0.27rem
 </style>

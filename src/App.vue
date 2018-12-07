@@ -9,9 +9,12 @@
   import FoodGuide from "./components/FooterGuide/FootGuide"
   export default {
     name: 'App',
+    mounted(){
+      this.$store.dispatch("getUser");
+    },
     components:{
       FoodGuide
-    }
+    },
   }
 </script>
 

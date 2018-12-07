@@ -1,34 +1,17 @@
 <template>
-    <div class="recommend">
-      <div class="header-wrap">
-        <div class="header" v-if="findRecommend[0]">
-          <img :src="findRecommend[0].ad.picUrl" alt="">
+  <div class="recommend">
+    <div class="recommend-item"
+         v-for="(rec,index) in arr"
+         :key="index"
+    >
+      <div class="header-wrap" v-if="rec.ad">
+        <div class="header" >
+          <img :src="rec.ad.picUrl" alt="">
         </div>
       </div>
-      <div class="recommend-item"
-           v-for="(rec,index) in findRecommend"
-           :key="index"
-      >
-          <div class="item-1" v-if="rec.topics[index].type===1" v-for="(topic,index) in rec.topics" :key="index">
-            <div class="item-info">
-              <div class="name">
-                <span class="span-img">
-                  <img :src="topic.avatar" alt="">
-                </span>
-                <span class="span-text">{{topic.nickname}}</span>
-              </div>
-              <div class="title">{{topic.title}}</div>
-              <div class="desc">{{topic.subTitle}}</div>
-              <div class="read-count">
-                <i class="iconfont icon-faxian1"></i>
-                <span>{{Math.floor(topic.readCount/1000)}}k人看过</span>
-              </div>
-            </div>
-            <div class="item-pic">
-              <img :src="topic.picUrl" alt="">
-            </div>
-          </div>
-          <div class="item-2" v-if="rec.topics[index].type===0" v-for="(topic,index) in rec.topics" :key="index">
+      <div class="view-wrap" v-for="(topic,index) in content(rec)" :key="index">
+        <div class="item-1" v-if="topic.type===1||topic.type===2">
+          <div class="item-info">
             <div class="name">
                 <span class="span-img">
                   <img :src="topic.avatar" alt="">
@@ -36,31 +19,72 @@
               <span class="span-text">{{topic.nickname}}</span>
             </div>
             <div class="title">{{topic.title}}</div>
-            <div class="img">
-              <img :src="topic.picUrl" alt="">
-            </div>
+            <div class="desc">{{topic.subTitle}}</div>
             <div class="read-count">
               <i class="iconfont icon-faxian1"></i>
               <span>{{Math.floor(topic.readCount/1000)}}k人看过</span>
             </div>
           </div>
+          <div class="item-pic">
+            <img :src="topic.picUrl" alt="">
+          </div>
+        </div>
+        <div class="item-2" v-if="topic.type===0">
+          <div class="name">
+                <span class="span-img">
+                  <img :src="topic.avatar" alt="">
+                </span>
+            <span class="span-text">{{topic.nickname}}</span>
+          </div>
+          <div class="title">{{topic.title}}</div>
+          <div class="img">
+            <img :src="topic.picUrl" alt="">
+          </div>
+          <div class="read-count">
+            <i class="iconfont icon-faxian1"></i>
+            <span>{{Math.floor(topic.readCount/1000)}}k人看过</span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
 </template>
 
 <script>
-    import {mapState} from 'vuex'
-    export default {
-        name: "recommend",
-        mounted(){
-          this.$store.dispatch('getFindRecommend',()=>{
+  import {mapState} from 'vuex'
+  export default {
+    name: "tab",
+    mounted(){
+      this.$store.dispatch('getFindRecommend',()=>{
 
-          })
-        },
-        computed:{
-          ...mapState(['findRecommend'])
+      })
+    },
+    data(){
+      return{
+
+      }
+    },
+    computed:{
+      ...mapState(['findRecommend','recommend','daren']),
+      arr(){
+         if(this.$route.params.index==='0'){
+           return this.recommend;
+         }else {
+           return this.daren;
+         }
+      },
+    },
+    methods:{
+      content(rec){
+        if(this.$route.params.index==='0'){
+          return rec.topics
+        }else if(this.$route.params.index==='1'){
+          return rec;
         }
+      }
     }
+  }
 </script>
 
 <style scoped lang="stylus">
@@ -113,8 +137,8 @@
               width 100%
               height 100%
           .span-text
-             display inline-block
-             line-height .36rem
+            display inline-block
+            line-height .36rem
         .title
           width 100%
           font-size .36rem
@@ -124,23 +148,23 @@
           white-space: nowrap;
           overflow hidden;
           text-overflow ellipsis
-         .desc
-           width 100%
-           white-space: nowrap;
-           overflow: hidden;
-           text-overflow: ellipsis;
-           font-size .28rem
-           line-height .4rem
-           padding-top .08rem
-           color #7f7f7f
-         .read-count
-           position absolute
-           left 0
-           bottom 0
-           font-size .22rem
-           color #999
-           line-height .32rem
-           margin-top .18rem
+        .desc
+          width 100%
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size .28rem
+          line-height .4rem
+          padding-top .08rem
+          color #7f7f7f
+        .read-count
+          position absolute
+          left 0
+          bottom 0
+          font-size .22rem
+          color #999
+          line-height .32rem
+          margin-top .18rem
       .item-pic
         width 2.72rem
         height 2.72rem

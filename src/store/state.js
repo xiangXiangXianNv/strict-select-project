@@ -7,5 +7,8 @@ export default {
   categoryHotSell:{}, //存储热销数据
   categoryList:[],  //存储分类列表
   findRecommend:[], //存储发现列表中的推荐数据
-  user:[]
+  user:{}, //保存用户信息
+  navList:[],  //保存识物导航信息
+  recommend:[], //推荐数据
+  daren:{}, //达人数据
 }

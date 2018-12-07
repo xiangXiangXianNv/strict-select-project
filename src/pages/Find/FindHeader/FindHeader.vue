@@ -32,11 +32,11 @@
     background-color #fafafa
     box-sizing border-box
     border-bottom .01rem solid #d9d9d9
-    position: fixed !important;
-    left: 0;
-    top: 0;
-    z-index: 99;
-    width: 100%;
+    position fixed !important
+    left 0
+    top 0
+    z-index 99
+    width 100%
     .header
       padding 0 .26rem 0 .24rem
     .header-content
@@ -63,27 +63,27 @@
           width 1.6rem
           height 0.48rem
           background-size 100% 100%
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          margin: auto;
+          position absolute
+          top 0
+          right 0
+          bottom 0
+          left 0
+          margin auto
       .one
         display inline-block
         padding 0 0.08rem
         font-size .4rem
         margin-right .2rem
         color: #b4282d;
-        font-weight: bold;
+        font-weight bold
       .two
         display inline-block
         padding 0 0.08rem
       .header-right
-        display: block;
-        float: right;
-        height: 1rem;
-        margin-right: .02rem;
+        display block
+        float right
+        height 1rem
+        margin-right .02rem
         line-height 1rem
         i
           font-size .5rem
