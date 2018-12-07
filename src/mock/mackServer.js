@@ -1,5 +1,7 @@
 import Mock from "mockjs"
 import msite from './msite.json'
+import category from './category.json'
+import find from './shiwu.json'
 Mock.mock('/headerList',{
   code:0,
   data:msite.cateList
@@ -22,6 +24,14 @@ Mock.mock('/activityModule',{
 });
 Mock.mock('/categoryHotSell',{
   code:0,
-  data:msite.categoryHotSellModule.categoryList2
+  data:msite.categoryHotSellModule
+});
+Mock.mock('/categoryList',{
+  code:0,
+  data:category
+});
+Mock.mock('/findRecommend',{
+  code:0,
+  data:find
 });
 

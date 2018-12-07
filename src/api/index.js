@@ -23,9 +23,26 @@ export const reqSortList = () => {
 export const reqActivityModule = () => {
   return ajax('/activityModule')
 };
-//请求特价数据
+//请求热销数据
 export const reqCategoryHotSell = () => {
   return ajax('/categoryHotSell')
+};
+//请求分类列表
+export const reqCategoryList = () => {
+  return ajax('/categoryList')
+};
+//请求findRecommend列表
+export const reqFindRecommend = () => {
+  return ajax('/findRecommend')
+};
+const BASE = "/api";
+//请求findRecommend列表
+export const reqSendCode = (phone)=>{
+  return ajax(BASE+'/sendcode',{phone})
+};
+// 8、手机号验证码登陆
+export const reqSmsLogin = (phone,code)=>{
+  return ajax(BASE+'/login_sms',{phone,code},"POST")
 };
 
 

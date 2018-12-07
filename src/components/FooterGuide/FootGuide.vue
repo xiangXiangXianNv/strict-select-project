@@ -38,7 +38,7 @@
         name: "foot-guide",
         methods:{
           isCurrent(path){
-            return this.$route.path===path
+            return !this.$route.path.indexOf(path)
           },
           goTo(path){
             this.$router.replace(path)
