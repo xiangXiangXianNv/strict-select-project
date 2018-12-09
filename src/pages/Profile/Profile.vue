@@ -275,13 +275,13 @@
               border 1px solid #ddd
               border-radius 4px
               outline 0
-              font 400 14px Arial
+              font 400 .24rem Arial
               &:focus
                 border 1px solid #02a774
             .login_message
               position relative
               margin-top 16px
-              height 48px
+              height 1rem
               font-size 14px
               background #fff
               .get_verification
@@ -291,18 +291,18 @@
                 transform translateY(-50%)
                 border 0
                 color #ccc
-                font-size 14px
+                font-size 0.26rem
                 background transparent
                 &.switchColor
                   color black
             .login_verification
               position relative
               margin-top 16px
-              height 48px
+              height 1rem
               font-size 14px
               background #fff
               .switch_button
-                font-size 12px
+                font-size 0.24rem
                 border 1px solid #ddd
                 border-radius 8px
                 transition background-color .3s,border-color .3s
@@ -326,8 +326,8 @@
                   position absolute
                   top -1px
                   left -1px
-                  width 16px
-                  height 16px
+                  width .16rem
+                  height .16rem
                   border 1px solid #ddd
                   border-radius 50%
                   background #fff
@@ -338,25 +338,25 @@
           .login_submit
             display block
             width 100%
-            height 42px
+            height 1rem
             margin-top 30px
             border-radius 4px
             background rgb(180,40,45)
             color #fff
             text-align center
-            font-size 16px
-            line-height 42px
+            font-size .27rem
+            line-height 1rem
             border 0
         .other-login
           display block
           width 100%
-          height 42px
-          margin-top 30px
+          height 1rem
+          margin-top .3rem
           border-radius 4px
           color rgb(180,40,45)
           text-align center
-          font-size 16px
-          line-height 42px
+          font-size .27rem
+          line-height 1rem
           border 1px rgb(180,40,45) solid
           background-color white
 </style>

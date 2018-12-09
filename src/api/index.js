@@ -80,5 +80,9 @@ export const reqDaRen = ({index,url,page})=>{
 export const reqSearchList = ({keywordPrefix,url})=>{
   return ajax(BASE2+url,{keywordPrefix:keywordPrefix},"POST");
 };
+//请求搜索列表商品数据
+export const reqShopList = ({url})=>{
+  return ajax(BASE2+url);
+};
 
 

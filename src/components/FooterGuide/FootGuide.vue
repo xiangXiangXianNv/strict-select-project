@@ -71,9 +71,9 @@
       &.on
         color rgb(238,79,65)
       span
-        font-size 12px
+        font-size 0.24rem
         margin-top 2px
         margin-bottom 2px
         .iconfont
-          font-size 22px
+          font-size 0.48rem
 </style>

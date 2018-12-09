@@ -12,7 +12,8 @@ import {
   RECEIVE_NAVLIST,
   RECEIVE_RECOMMEND,
   RECEIVE_DAREN,
-  RECEIVE_SEARCHLIST
+  RECEIVE_SEARCHLIST,
+  RECEIVE_SHOPLIST
 } from "./mutation-types"
 import {
   reqHeaderList,
@@ -28,7 +29,8 @@ import {
   reqNavList,
   reqRecommend,
   reqDaRen,
-  reqSearchList
+  reqSearchList,
+  reqShopList,
 } from "../api"
 export default {
   async getCateList({commit},fn){
@@ -141,6 +143,13 @@ export default {
     const searchList = result.data;
     if(result.code==='200'){
       commit(RECEIVE_SEARCHLIST,{searchList});
+    }
+  },
+  async getShopList({commit},{url}){
+    const result = await reqShopList({url});
+    const shopList = result.data;
+    if(result.code==='200'){
+      commit(RECEIVE_SHOPLIST,{shopList});
     }
   },
 }

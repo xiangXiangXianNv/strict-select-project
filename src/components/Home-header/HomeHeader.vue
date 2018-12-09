@@ -38,7 +38,7 @@
           <div class="text" :class="{active:currentIndex===index}" v-for="(headerItem,index) in cateList" :key="index">{{headerItem.name}}</div>
         </div>
     </div>
-    <div class="mask" v-show="isShow"></div>
+    <div class="mask" v-show="isShow" @click="isShow=!isShow"></div>
   </header>
 </template>
 
@@ -120,10 +120,11 @@
           height .37333rem
           margin-right .1rem
           position relative
-          left -3px
-          top 2px
+          left -0.2rem
+          top 0.1rem
+          font-size 0.24rem
         .header-input-text
-          font-size 14px
+          font-size 0.24rem
           color #666
           font-weight normal
       .header-login
@@ -160,6 +161,7 @@
                 display block
                 width 1.2rem
                 text-align center
+                font-size 0.24rem
                 &.active
                   color rgb(189,64,69)
                   &::after
@@ -184,7 +186,7 @@
           &.up
              transform  rotate(-180deg)
           &.down
-            transform rotate(-360deg)
+             transform rotate(-360deg)
         .all
           width 100%
           height .6rem

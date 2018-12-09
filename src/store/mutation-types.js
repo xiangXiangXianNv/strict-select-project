@@ -12,3 +12,4 @@ export const RECEIVE_NAVLIST = 'receive_navlist';
 export const RECEIVE_RECOMMEND = 'receive_recommend';
 export const RECEIVE_DAREN = 'receive_daren';
 export const RECEIVE_SEARCHLIST = 'receive_searchlist';
+export const RECEIVE_SHOPLIST = 'receive_shoplist';

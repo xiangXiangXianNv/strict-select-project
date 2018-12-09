@@ -12,7 +12,8 @@ import {
   RECEIVE_NAVLIST,
   RECEIVE_RECOMMEND,
   RECEIVE_DAREN,
-  RECEIVE_SEARCHLIST
+  RECEIVE_SEARCHLIST,
+  RECEIVE_SHOPLIST
 } from "./mutation-types"
 export default {
   [RECEIVE_HEADERLIST](state,{cateList}){
@@ -56,5 +57,8 @@ export default {
   },
   [RECEIVE_SEARCHLIST](state,{searchList}){
     state.searchList = searchList;
+  },
+  [RECEIVE_SHOPLIST](state,{shopList}){
+    state.shopList = shopList;
   },
 }

@@ -10,7 +10,7 @@
 ### day03
  1. 如果加入混合,一定要把混合写在样式的第一行,因为如果写在后面的话很有可能覆盖之前的样式,例如:混合中是相对定位,而我
 本身元素是需要固定定位.那么固定定位就会被覆盖掉
- 2. commit的时候一定要注意 mutation-type一定不要写错了!!!!
+ 2. commit的时候一定要注意 mutations-type一定不要写错了!!!!
 ## day04
  1. 判断返回数据的时候使用了typeof去判断一个对象和数组是否是object是非常严重的错误!!!!!因为数组的类型也是一个对象 
 
@@ -21,3 +21,6 @@
   - ```
     axios.post(url,qs .stringify({jobNumber: '430525', password: '123'}), {headers: {'Content-Type':'application/x-www-form-urlencoded'}});
     ```
+## day05
+  1. 在实现自动登陆的时候,如果session_id中返回拿不到对应的user,又没有进行判断的时候就会出现把状态中的
+  user赋值为了undefined 
