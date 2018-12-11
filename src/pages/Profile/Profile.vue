@@ -168,15 +168,14 @@
                   this.switchCaptcha();
                   MessageBox.alert(result.msg);
                 }
+               }
               if(result.code===0){
                 /*登陆成功后将返回的用户信息保存在状态中*/
                 const user = result.data;
-                console.log(user);
                 this.$store.dispatch("saveUser",user);
                 //跳转到个人中心界面
                 this.$router.replace("/home")
               }
-            }
             },
             switchCaptcha(){
               this.$refs.captcha.src = "http://localhost:5000/captcha?time="+Date.now();
