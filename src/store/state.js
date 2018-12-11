@@ -9,8 +9,9 @@ export default {
   findRecommend:[], //存储发现列表中的推荐数据
   user:{}, //保存用户信息
   navList:[],  //保存识物导航信息
-  recommend:[], //推荐数据
-  daren:{}, //达人数据
   searchList:[],
-  shopList:{}
+  shopList:{},
+  /*recommend:[], //推荐数据
+  daren:{}, //达人数据*/
+  tabList:[],
 }

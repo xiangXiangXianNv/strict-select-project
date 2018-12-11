@@ -63,8 +63,17 @@ export const reqNavList = ()=>{
   return ajax(BASE2+'/topic/v1/find/getTabs.json')
 };
 //请求识物组件中的内容推荐列表数据
-export const reqRecommend = ({url})=>{
+export const reqSearchList = ({keywordPrefix,url})=>{
+  return ajax(BASE2+url,{keywordPrefix:keywordPrefix},"POST");
+};
+//请求搜索列表商品数据
+export const reqShopList = ({url})=>{
   return ajax(BASE2+url);
+};
+//请求识物组件中的内容推荐列表数据
+export const reqRecommend = ({url,page})=>{
+  let path = `?page=${page}`;
+  return ajax(BASE2+url+path);
 };
 //请求识物组件中的内容达人列表数据
 export const reqDaRen = ({index,url,page})=>{
@@ -76,13 +85,7 @@ export const reqDaRen = ({index,url,page})=>{
   }
   return ajax(BASE2+url+path);
 };
-//请求识物组件中的内容推荐列表数据
-export const reqSearchList = ({keywordPrefix,url})=>{
-  return ajax(BASE2+url,{keywordPrefix:keywordPrefix},"POST");
-};
-//请求搜索列表商品数据
-export const reqShopList = ({url})=>{
-  return ajax(BASE2+url);
-};
+//清空数据切换tab页面的时候
+
 
 

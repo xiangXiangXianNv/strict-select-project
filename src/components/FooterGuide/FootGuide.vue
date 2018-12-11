@@ -60,6 +60,7 @@
     width 100%
     height 1rem
     display flex
+    margin-top 1rem
     .guide_item
       display flex
       flex 1

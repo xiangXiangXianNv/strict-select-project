@@ -13,7 +13,9 @@ import {
   RECEIVE_RECOMMEND,
   RECEIVE_DAREN,
   RECEIVE_SEARCHLIST,
-  RECEIVE_SHOPLIST
+  RECEIVE_SHOPLIST,
+  RECEIVE_TABLIST,
+  RESET_SHIWULIST
 } from "./mutation-types"
 export default {
   [RECEIVE_HEADERLIST](state,{cateList}){
@@ -49,16 +51,17 @@ export default {
   [RECEIVE_NAVLIST](state,{navList}){
     state.navList = navList;
   },
-  [RECEIVE_RECOMMEND](state,{recommend}){
-    state.recommend = recommend;
-  },
-  [RECEIVE_DAREN](state,{daren}){
-    state.daren = daren;
-  },
   [RECEIVE_SEARCHLIST](state,{searchList}){
     state.searchList = searchList;
   },
   [RECEIVE_SHOPLIST](state,{shopList}){
     state.shopList = shopList;
+  },
+  [RECEIVE_TABLIST](state,{data}){
+    state.tabList = state.tabList.concat(data);
+  },
+  //切换topic页面时,清空ShiWuList
+  [RESET_SHIWULIST](state){
+    state.tabList=[];
   },
 }

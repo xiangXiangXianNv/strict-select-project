@@ -5,11 +5,11 @@
          :key="index"
     >
       <div class="header-wrap" v-if="rec.ad">
-        <div class="header" >
+        <div class="header">
           <img :src="rec.ad.picUrl" alt="">
         </div>
       </div>
-      <div class="view-wrap" v-for="(topic,index) in content(rec)" :key="index">
+      <div class="view-wrap" v-for="(topic,index) in content(rec)" :key="index" v-if="content(rec).length>0">
         <div class="item-1" v-if="topic.type===1||topic.type===2">
           <div class="item-info">
             <div class="name">
@@ -22,7 +22,7 @@
             <div class="desc">{{topic.subTitle}}</div>
             <div class="read-count">
               <i class="iconfont icon-faxian1"></i>
-              <span>{{Math.floor(topic.readCount/1000)}}k人看过</span>
+              <span>{{(topic.readCount/1000).toFixed(2)}}k人看过</span>
             </div>
           </div>
           <div class="item-pic">
@@ -42,7 +42,7 @@
           </div>
           <div class="read-count">
             <i class="iconfont icon-faxian1"></i>
-            <span>{{Math.floor(topic.readCount/1000)}}k人看过</span>
+            <span>{{(topic.readCount/1000).toFixed(2)}}k人看过</span>
           </div>
         </div>
       </div>
@@ -53,42 +53,72 @@
 
 <script>
   import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
   export default {
     name: "tab",
     mounted(){
-      this.$store.dispatch('getFindRecommend',()=>{
-
-      })
+      this.$store.dispatch('getNavList',()=>{
+        this.next()
+      });
     },
     data(){
       return{
-
+          page : 1
       }
     },
     computed:{
-      ...mapState(['findRecommend','recommend','daren']),
+      ...mapState(['findRecommend','tabList','navList']),
       arr(){
-         if(this.$route.params.index==='0'){
-           return this.recommend;
-         }else {
-           return this.daren;
-         }
-      },
+        if(this.$route.params.index==='0'){
+          return this.tabList;
+        }else if(this.$route.params.index==='1'){
+          return [1]
+        }
+      }
     },
     methods:{
       content(rec){
         if(this.$route.params.index==='0'){
-          return rec.topics
+          return rec.topics;
         }else if(this.$route.params.index==='1'){
-          return rec;
+          return this.tabList;
         }
-      }
+      },
+
+      next(){
+      this.$nextTick(()=>{
+        this.scroll = new BScroll('.view',{
+          click:true,
+          pullUpLoad:true
+        });
+        this.scroll.on('pullingUp',()=>{
+          this.page = this.page + 1;
+          let id;
+          let url;
+          const cb=()=>{
+            this.$nextTick(()=>{
+              this.scroll.finishPullUp();
+              this.scroll.refresh();
+            })
+          };
+          if(this.$route.params.index==="0"){
+            url = '/topic/v1/find/recAuto.json';
+            this.$store.dispatch('getRecommend',{url:url,page:this.page,cb})
+          }else if(this.$route.params.index==='1'){
+            id = this.navList[this.$route.params.index].tabId;
+            url = "/topic/v1/find/getTabData.json";
+            this.$store.dispatch('getDaRen',{index:id,url:url,page:this.page,cb});
+          }
+        })
+      })
     }
+    },
   }
 </script>
 
 <style scoped lang="stylus">
   .recommend
+    padding-bottom 1rem
     .header-wrap
       width 100%
       background: #fff
@@ -145,14 +175,16 @@
           color #333
           line-height .44rem
           padding-top .32rem
-          white-space: nowrap;
-          overflow hidden;
+          overflow hidden
           text-overflow ellipsis
+          display -webkit-box
+          -webkit-line-clamp 2
+          -webkit-box-orient vertical
         .desc
           width 100%
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
           font-size .28rem
           line-height .4rem
           padding-top .08rem
@@ -176,11 +208,11 @@
           height 100%
           display block
     .item-2
-      width: 100%;
-      background: #fff;
-      margin: .2rem 0;
-      box-sizing: border-box;
-      padding: .36rem .3rem;
+      width 100%
+      background: #fff
+      margin .2rem 0
+      box-sizing border-box
+      padding .36rem .3rem
       .name
         font-size 0.28rem
         color #333

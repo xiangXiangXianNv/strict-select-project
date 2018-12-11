@@ -13,7 +13,9 @@ import {
   RECEIVE_RECOMMEND,
   RECEIVE_DAREN,
   RECEIVE_SEARCHLIST,
-  RECEIVE_SHOPLIST
+  RECEIVE_SHOPLIST,
+  RECEIVE_TABLIST,
+  RESET_SHIWULIST
 } from "./mutation-types"
 import {
   reqHeaderList,
@@ -117,25 +119,12 @@ export default {
     }
   },
   //请求导航列表
-  async getNavList({commit}){
+  async getNavList({commit},fn){
     const result = await reqNavList();
     const navList = result.data;
     if(result.code==="200"){
       commit(RECEIVE_NAVLIST,{navList});
-    }
-  },
-  async getRecommend({commit},{index,url}){
-    const result = await reqRecommend({index,url});
-    if(result.code==='200'){
-      const recommend = result.data;
-      commit(RECEIVE_RECOMMEND,{recommend})
-    }
-  },
-  async getDaRen({commit},{index,url,page}){
-    const result = await reqDaRen({index,url,page});
-    if(result.code==='200'){
-      const daren = result.data;
-      commit(RECEIVE_DAREN,{daren})
+      typeof fn === 'function' && fn();
     }
   },
   async getSearchList({commit},{url,keywordPrefix}){
@@ -151,5 +140,31 @@ export default {
     if(result.code==='200'){
       commit(RECEIVE_SHOPLIST,{shopList});
     }
+  },
+  async getRecommend({commit},{url,page,cb}){
+    const result = await reqRecommend({url,page});
+    if(result.code==='200'){
+      const recommend = result.data.result;
+      commit(RECEIVE_TABLIST,{data:recommend});
+      typeof cb ==="function"&&cb();
+    }
+  },
+  async getDaRen({commit},{index,url,page,cb}){
+    const result = await reqDaRen({index,url,page});
+    if(result.code==='200'){
+      const daren = result.data.result;
+      commit(RECEIVE_TABLIST,{data:daren});
+      typeof cb ==="function"&&cb();
+    }
+  },
+  async getTabList({commit},{index,url,page}){
+    const result = await reqDaRen({index,url,page});
+    if(result.code==='200'){
+      const daren = result.data.result;
+      commit(RECEIVE_DAREN,{daren})
+    }
+  },
+  async resetShiWuList({commit}){
+    commit(RESET_SHIWULIST);
   },
 }

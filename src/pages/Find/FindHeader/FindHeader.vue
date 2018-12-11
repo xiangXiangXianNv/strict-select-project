@@ -29,6 +29,7 @@
 <style scoped lang="stylus">
   .header-wrap
     height 1rem
+    width 100%
     background-color #fafafa
     box-sizing border-box
     border-bottom .01rem solid #d9d9d9
@@ -36,7 +37,6 @@
     left 0
     top 0
     z-index 99
-    width 100%
     .header
       padding 0 .26rem 0 .24rem
     .header-content

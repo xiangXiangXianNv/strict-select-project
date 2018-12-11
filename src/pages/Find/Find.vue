@@ -23,10 +23,9 @@
         name: "find",
         mounted(){
           this.$store.dispatch('getNavList');
-          let id;
           let url;
-          url = "/topic/v1/find/recManual.json";
-          this.$store.dispatch('getRecommend',{url:url});
+          url = '/topic/v1/find/recAuto.json';
+          this.$store.dispatch('getRecommend',{url:url,page:this.page})
         },
         data(){
           return {
@@ -41,13 +40,14 @@
         },
         watch:{
           $route(route){
+            this.$store.dispatch('resetShiWuList');
             let id;
             let url;
             if(route.params.index==="0"){
-              url = "/topic/v1/find/recManual.json";
-              this.$store.dispatch('getRecommend',{url:url})
+              url = '/topic/v1/find/recAuto.json';
+              this.$store.dispatch('getRecommend',{url:url,page:this.page})
             }else if(route.params.index==='1'){
-              id = this.navList[route.params.index].tabId;
+              id = this.navList[this.$route.params.index].tabId;
               url = "/topic/v1/find/getTabData.json";
               this.$store.dispatch('getDaRen',{index:id,url:url,page:this.page});
             }
@@ -74,7 +74,6 @@
         .nav-list
           width 100%
           height .72rem
-          padding-bottom .2rem
           white-space nowrap
           overflow-y hidden
           overflow-x auto
@@ -103,6 +102,7 @@
                height .05333rem
                background-color #b4282d
     .view
-      padding .72rem 0 .98rem 0
       background #f4f4f4
+      height 13rem
+      margin-top 1rem
 </style>
