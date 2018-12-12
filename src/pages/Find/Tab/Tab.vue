@@ -48,24 +48,12 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
   import {mapState} from 'vuex'
-  import BScroll from 'better-scroll'
   export default {
     name: "tab",
-    mounted(){
-      this.$store.dispatch('getNavList',()=>{
-        this.next()
-      });
-    },
-    data(){
-      return{
-          page : 1
-      }
-    },
     computed:{
       ...mapState(['findRecommend','tabList','navList']),
       arr(){
@@ -84,34 +72,6 @@
           return this.tabList;
         }
       },
-
-      next(){
-      this.$nextTick(()=>{
-        this.scroll = new BScroll('.view',{
-          click:true,
-          pullUpLoad:true
-        });
-        this.scroll.on('pullingUp',()=>{
-          this.page = this.page + 1;
-          let id;
-          let url;
-          const cb=()=>{
-            this.$nextTick(()=>{
-              this.scroll.finishPullUp();
-              this.scroll.refresh();
-            })
-          };
-          if(this.$route.params.index==="0"){
-            url = '/topic/v1/find/recAuto.json';
-            this.$store.dispatch('getRecommend',{url:url,page:this.page,cb})
-          }else if(this.$route.params.index==='1'){
-            id = this.navList[this.$route.params.index].tabId;
-            url = "/topic/v1/find/getTabData.json";
-            this.$store.dispatch('getDaRen',{index:id,url:url,page:this.page,cb});
-          }
-        })
-      })
-    }
     },
   }
 </script>

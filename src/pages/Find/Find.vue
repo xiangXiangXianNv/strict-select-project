@@ -18,28 +18,71 @@
 
 <script>
     import FindHeader from './FindHeader/FindHeader'
+    import BScroll from 'better-scroll'
     import {mapState} from 'vuex'
+    import {Toast} from 'mint-ui'
     export default {
         name: "find",
         mounted(){
-          this.$store.dispatch('getNavList');
-          let url;
-          url = '/topic/v1/find/recAuto.json';
-          this.$store.dispatch('getRecommend',{url:url,page:this.page})
+          this.$store.dispatch('getNavList',()=>{
+            this.next();
+            let url;
+            let id;
+            if(this.$route.params.index==="0"){
+              url = '/topic/v1/find/recAuto.json';
+              this.$store.dispatch('getRecommend',{url:url,page:this.page})
+            }else if(this.$route.params.index==='1'){
+              id = this.navList[this.$route.params.index].tabId;
+              url = "/topic/v1/find/getTabData.json";
+              this.$store.dispatch('getDaRen',{index:id,url:url,page:this.page});
+            }
+          });
         },
         data(){
           return {
-            page:1
+            page : 1,
           }
         },
         computed:{
           ...mapState(['navList'])
         },
-        components:{
-          FindHeader
+        methods:{
+          next(){
+            this.$nextTick(()=>{
+              this.scroll = new BScroll('.view',{
+                click:true,
+                pullUpLoad:true,
+                scrollbar : {
+                  fade :　true
+                }
+              });
+              this.scroll.on('pullingUp',()=>{
+                Toast('loading....');
+                this.page = this.page + 1;
+                let id;
+                let url;
+                const cb=()=>{
+                  this.$nextTick(()=>{
+                    Toast('加载成功!');
+                    this.scroll.finishPullUp();
+                    this.scroll.refresh();
+                  })
+                };
+                if(this.$route.params.index==="0"){
+                  url = '/topic/v1/find/recAuto.json';
+                  this.$store.dispatch('getRecommend',{url:url,page:this.page,cb})
+                }else if(this.$route.params.index==='1'){
+                  id = this.navList[this.$route.params.index].tabId;
+                  url = "/topic/v1/find/getTabData.json";
+                  this.$store.dispatch('getDaRen',{index:id,url:url,page:this.page,cb});
+                }
+              })
+            })
+          }
         },
         watch:{
           $route(route){
+            this.page = 1;
             this.$store.dispatch('resetShiWuList');
             let id;
             let url;
@@ -53,6 +96,10 @@
             }
           }
         },
+        components:{
+          FindHeader
+        },
+
     }
 </script>
 
